@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   ExtraFun.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/30 18:24:07 by seungcoh          #+#    #+#             */
-/*   Updated: 2022/04/30 19:50:16 by seungcoh         ###   ########.fr       */
+/*   Created: 2022/04/30 19:43:49 by seungcoh          #+#    #+#             */
+/*   Updated: 2022/04/30 20:57:06 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
+#ifndef EXTRAFUN_HPP
+#define EXTRAFUN_HPP
+
 #include <iostream>
 
-int main(int argc, char **argv)
-{
-	if (argc == 1)
-	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
-		return 0;
-	}
-	for (int i = 1; i < argc; i++)
-	{
-		for (int j = 0; argv[i][j]; j++)
-		{
-			if (argv[i][j] >= 'a' && argv[i][j] <= 'z')
-				std::cout << char(argv[i][j] - 'a' + 'A');
-			else
-				std::cout << argv[i][j];
-		}
-	}
-	std::cout << '\n';
-	return 0;
-}
+std::string get_not_empty_string();
+int get_idx_string(int);
+
+#endif

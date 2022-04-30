@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/30 18:24:07 by seungcoh          #+#    #+#             */
-/*   Updated: 2022/04/30 19:50:16 by seungcoh         ###   ########.fr       */
+/*   Created: 2022/04/30 18:49:29 by seungcoh          #+#    #+#             */
+/*   Updated: 2022/04/30 20:59:59 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
 
-int main(int argc, char **argv)
+#include "Contract.hpp"
+#include "ExtraFun.hpp"
+#include <iomanip>
+
+class PhoneBook
 {
-	if (argc == 1)
+private:
+	Contract contracts[8];
+	int first_idx;
+	int cnt;
+	int full;
+public:
+	PhoneBook()
 	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
-		return 0;
+		first_idx = 0;
+		cnt = 0;
+		full = 0;
 	}
-	for (int i = 1; i < argc; i++)
-	{
-		for (int j = 0; argv[i][j]; j++)
-		{
-			if (argv[i][j] >= 'a' && argv[i][j] <= 'z')
-				std::cout << char(argv[i][j] - 'a' + 'A');
-			else
-				std::cout << argv[i][j];
-		}
-	}
-	std::cout << '\n';
-	return 0;
-}
+	void add_contract();
+	void search_contracts();
+};
+#endif

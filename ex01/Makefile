@@ -6,7 +6,7 @@
 #    By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/12 14:12:53 by seungcoh          #+#    #+#              #
-#    Updated: 2022/04/30 19:50:05 by seungcoh         ###   ########.fr        #
+#    Updated: 2022/04/30 19:49:37 by seungcoh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,11 @@ CXX = c++
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = megaphone
-SRCS = megaphone.cpp
+NAME = MyAwesomePhoneBook
+SRCS = Contract.cpp\
+		ExtraFun.cpp\
+		main.cpp\
+		PhoneBook.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: 		$(NAME)

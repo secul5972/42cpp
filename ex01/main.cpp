@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/30 18:24:07 by seungcoh          #+#    #+#             */
-/*   Updated: 2022/04/30 19:50:16 by seungcoh         ###   ########.fr       */
+/*   Created: 2022/04/30 18:49:29 by seungcoh          #+#    #+#             */
+/*   Updated: 2022/04/30 20:31:47 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "main.hpp"
 
-int main(int argc, char **argv)
+int main()
 {
-	if (argc == 1)
+	std::string input;
+	PhoneBook pb;
+
+	while (1)
 	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
-		return 0;
+		std::cout << "Choose (ADD, SEARCH, EXIT) : ";
+		input = get_not_empty_string();
+		if (input.compare("ADD") == 0)
+			pb.add_contract();
+		else if (input.compare("SEARCH") == 0)
+			pb.search_contracts();
+		else if (input.compare("EXIT") == 0)
+			return 0;
+		else
+			std::cout << "Wrong command\n";
 	}
-	for (int i = 1; i < argc; i++)
-	{
-		for (int j = 0; argv[i][j]; j++)
-		{
-			if (argv[i][j] >= 'a' && argv[i][j] <= 'z')
-				std::cout << char(argv[i][j] - 'a' + 'A');
-			else
-				std::cout << argv[i][j];
-		}
-	}
-	std::cout << '\n';
-	return 0;
 }
