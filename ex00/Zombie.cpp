@@ -13,12 +13,19 @@
 #include "Zombie.hpp"
 #include <iostream>
 
-void Zombie::announce(void)
+Zombie::Zombie(void)
 {
-    std::cout << this->name << ": BraiiiiiiinnnzzzZ...\n";    
+    name = "";
 }
-
-void Zombie::setname(std::string name)
+Zombie::Zombie(std::string name)
 {
     this->name = name;
+}
+Zombie::~Zombie(void)
+{
+    std::cout << name <<" Zombie is dead\n";
+}
+void Zombie::announce(void)
+{
+    std::cout << name << ": BraiiiiiiinnnzzzZ...\n";    
 }
