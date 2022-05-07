@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 14:08:48 by seungcoh          #+#    #+#             */
-/*   Updated: 2022/05/07 16:08:48 by seungcoh         ###   ########.fr       */
+/*   Updated: 2022/05/07 17:18:18 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define ZOMBIE_HPP
 
 #include <string>
+#include <iostream>
+
 class Zombie
 {
 private:
