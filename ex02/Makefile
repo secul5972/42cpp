@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: seungcoh <seungcoh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/05/07 17:15:51 by seungcoh          #+#    #+#              #
-#    Updated: 2022/05/07 17:16:07 by seungcoh         ###   ########.fr        #
+#    Created: 2022/05/07 17:15:58 by seungcoh          #+#    #+#              #
+#    Updated: 2022/05/07 17:16:00 by seungcoh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,8 @@ CXX = c++
 RM = rm -f
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = Zombie
+NAME = brain
 SRCS = main.cpp\
-	Zombie.cpp\
-	zombieHorde.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
