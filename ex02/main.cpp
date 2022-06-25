@@ -10,3 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string>
+#include <iostream>
+
+int main()
+{
+	std::string brain = "HI THIS IS BRAIN";
+	std::string *stringPTR = &brain;
+	std::string &stringPEF = brain;
+
+	std::cout << "string:		" << &brain << "\n";
+	std::cout << "stringPTR:	" << stringPTR << "\n";
+	std::cout << "stringREF:	" << &stringPEF << "\n";
+
+	std::cout << "string:		" << brain << "\n";
+	std::cout << "stringPTR:	" << *stringPTR << "\n";
+	std::cout << "stringREF:	" << stringPEF << "\n";
+}
