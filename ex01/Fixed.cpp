@@ -6,7 +6,7 @@
 /*   By: secul5972 <secul5972@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 14:13:27 by seungcoh          #+#    #+#             */
-/*   Updated: 2022/06/29 11:41:07 by secul5972        ###   ########.fr       */
+/*   Updated: 2022/06/29 11:59:27 by secul5972        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,6 @@ Fixed &Fixed::operator=(const Fixed &fixed)
 	return *this;
 }
 
-Fixed::~Fixed()
-{
-	std::cout << "Destructor called\n";
-}
-
 int Fixed::getRawBits(void) const
 {
 	return this->value;
@@ -64,6 +59,11 @@ float Fixed::toFloat(void) const
 int Fixed::toInt(void) const
 {
 	return (int)roundf((float)this->value / (1 << this->frac));
+}
+
+Fixed::~Fixed()
+{
+	std::cout << "Destructor called\n";
 }
 
 std::ostream &operator<<(std::ostream &o, const Fixed &fixed)
