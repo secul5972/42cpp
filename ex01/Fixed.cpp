@@ -3,19 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seungcoh <seungcoh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: secul5972 <secul5972@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 14:13:27 by seungcoh          #+#    #+#             */
-/*   Updated: 2022/06/26 14:28:19 by seungcoh         ###   ########.fr       */
+/*   Updated: 2022/06/29 11:41:07 by secul5972        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <iostream>
 
-Fixed::Fixed(): value(0)
+Fixed::Fixed() : value(0)
 {
 	std::cout << "Default constructor called\n";
+}
+
+Fixed::Fixed(const int val)
+{
+	std::cout << "Int constructor called\n";
+	this->value = val << this->frac;
+}
+
+Fixed::Fixed(const float val)
+{
+	std::cout << "Float constructor called\n";
+	this->value = (int)roundf(val * (1 << this->frac));
 }
 
 Fixed::Fixed(const Fixed &copy)
@@ -24,7 +35,7 @@ Fixed::Fixed(const Fixed &copy)
 	*this = copy;
 }
 
-Fixed& Fixed::operator=(const Fixed& fixed)
+Fixed &Fixed::operator=(const Fixed &fixed)
 {
 	std::cout << "Copy assignment operator called\n";
 	this->value = fixed.getRawBits();
@@ -35,14 +46,28 @@ Fixed::~Fixed()
 {
 	std::cout << "Destructor called\n";
 }
+
 int Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called\n";
 	return this->value;
 }
 
 void Fixed::setRawBits(int const raw)
 {
-	std::cout << "setRawBits member function called\n";
 	this->value = raw;
+}
+
+float Fixed::toFloat(void) const
+{
+	return (float)this->value / (1 << this->frac);
+}
+int Fixed::toInt(void) const
+{
+	return (int)roundf((float)this->value / (1 << this->frac));
+}
+
+std::ostream &operator<<(std::ostream &o, const Fixed &fixed)
+{
+	o << fixed.toFloat();
+	return o;
 }
