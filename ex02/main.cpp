@@ -6,30 +6,24 @@
 /*   By: secul5972 <secul5972@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 10:49:06 by secul5972         #+#    #+#             */
-/*   Updated: 2022/07/03 14:37:25 by secul5972        ###   ########.fr       */
+/*   Updated: 2022/07/03 15:27:01 by secul5972        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {
-	ClapTrap A;
-	ClapTrap B("bb");
-	ClapTrap C(B);
-	ClapTrap D;
+	FragTrap A;
+	FragTrap B("bb");
+	FragTrap C(B);
+	FragTrap D;
+	FragTrap E("asdas");
 
-	A.attack("fff");
-	B.takeDamage(3);
-	C.beRepaired(2);
-
-	for(int i = 0;i < 10;i++)
-		C.attack("fff");
-	for(int i = 0;i < 10;i++)
-		B.beRepaired(1);
-	for(int i = 0;i < 10;i++)
-		A.takeDamage(2);
-	A.attack("ccc");
 	D = A;
-	D.attack("sss");
+	A.highFivesGuys();
+	B.highFivesGuys();
+	C.highFivesGuys();
+	D.highFivesGuys();
+	E.highFivesGuys();
 }

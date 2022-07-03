@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: secul5972 <secul5972@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/03 10:49:06 by secul5972         #+#    #+#             */
-/*   Updated: 2022/07/03 14:37:25 by secul5972        ###   ########.fr       */
+/*   Created: 2022/07/03 14:09:58 by secul5972         #+#    #+#             */
+/*   Updated: 2022/07/03 14:47:34 by secul5972        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
+
 #include "ClapTrap.hpp"
 
-int main()
+class ScavTrap : public ClapTrap
 {
-	ClapTrap A;
-	ClapTrap B("bb");
-	ClapTrap C(B);
-	ClapTrap D;
+public:
+	ScavTrap();
+	ScavTrap(ScavTrap const &scav);
+	explicit ScavTrap(std::string newname);
+	~ScavTrap();
 
-	A.attack("fff");
-	B.takeDamage(3);
-	C.beRepaired(2);
+	ScavTrap& operator = (ScavTrap const &scav);
 
-	for(int i = 0;i < 10;i++)
-		C.attack("fff");
-	for(int i = 0;i < 10;i++)
-		B.beRepaired(1);
-	for(int i = 0;i < 10;i++)
-		A.takeDamage(2);
-	A.attack("ccc");
-	D = A;
-	D.attack("sss");
-}
+	virtual void attack(const std::string& target);
+
+	void guardGate();
+};
+
+#endif

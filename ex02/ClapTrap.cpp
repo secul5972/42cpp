@@ -6,7 +6,7 @@
 /*   By: secul5972 <secul5972@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 10:49:04 by secul5972         #+#    #+#             */
-/*   Updated: 2022/07/03 14:47:23 by secul5972        ###   ########.fr       */
+/*   Updated: 2022/07/03 14:47:10 by secul5972        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ ClapTrap::~ClapTrap()
 	std::cout << name << " ClapTrap destructor\n";
 }
 
-ClapTrap& ClapTrap::operator = (ClapTrap const &clap)
+ClapTrap& ClapTrap::operator = (const ClapTrap &clap)
 {
 	name = clap.name;
 	hit = clap.hit;
