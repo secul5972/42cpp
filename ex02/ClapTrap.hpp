@@ -25,11 +25,11 @@ protected:
 	unsigned int damage;
 public:
 	ClapTrap();
-	ClapTrap(ClapTrap const &clap);
+	ClapTrap(const ClapTrap &clap);
 	explicit ClapTrap(std::string name);
 	~ClapTrap();
 
-	ClapTrap& operator = (ClapTrap const &clap);
+	ClapTrap& operator=(const ClapTrap &clap);
 	
 	void attack(const std::string& target);
 	void takeDamage(unsigned int amount);

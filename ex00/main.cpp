@@ -31,5 +31,5 @@ int main()
 		A.takeDamage(2);
 	A.attack("ccc");
 	D = A;
-	D.attack("sss");
+	D.beRepaired(2);
 }

@@ -19,13 +19,13 @@ class ScavTrap : public ClapTrap
 {
 public:
 	ScavTrap();
-	ScavTrap(ScavTrap const &scav);
+	ScavTrap(const ScavTrap &scav);
 	explicit ScavTrap(std::string newname);
 	~ScavTrap();
 
-	ScavTrap& operator = (ScavTrap const &scav);
+	ScavTrap& operator=(const ScavTrap &scav);
 
-	virtual void attack(const std::string& target);
+	void attack(const std::string& target);
 
 	void guardGate();
 };

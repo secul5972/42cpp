@@ -20,7 +20,7 @@ FragTrap::FragTrap(): ClapTrap()
 	std::cout << name << " FragTrap default constructor\n";
 }
 
-FragTrap::FragTrap(FragTrap const &frag) : ClapTrap(frag.name)
+FragTrap::FragTrap(const FragTrap &frag) : ClapTrap(frag.name)
 {
 	*this = frag;
 	std::cout << name << " FragTrap copy constructor\n";
@@ -39,7 +39,7 @@ FragTrap::~FragTrap()
 	std::cout << name << " FragTrap destructor\n";
 }
 
-FragTrap& FragTrap::operator = (FragTrap const &frag)
+FragTrap& FragTrap::operator = (const FragTrap &frag)
 {
 	name = frag.name;
 	hit = frag.hit;

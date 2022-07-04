@@ -17,7 +17,7 @@ ClapTrap::ClapTrap() : name("Noname"), hit(10), energy(10), damage(0)
 	std::cout << name << " ClapTrap default constructor\n";
 }
 
-ClapTrap::ClapTrap(ClapTrap const &clap)
+ClapTrap::ClapTrap(const ClapTrap &clap)
 {
 	*this = clap;
 	std::cout << name << " ClapTrap copy constructor\n";

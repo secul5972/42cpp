@@ -17,7 +17,7 @@ ClapTrap::ClapTrap() : name("Noname"), hit(10), energy(10), damage(0)
 	std::cout << name << " ClapTrap default constructor\n";
 }
 
-ClapTrap::ClapTrap(ClapTrap const &clap)
+ClapTrap::ClapTrap(const ClapTrap &clap)
 {
 	*this = clap;
 	std::cout << name << " ClapTrap copy constructor\n";
@@ -33,7 +33,7 @@ ClapTrap::~ClapTrap()
 	std::cout << name << " ClapTrap destructor\n";
 }
 
-ClapTrap& ClapTrap::operator = (ClapTrap const &clap)
+ClapTrap& ClapTrap::operator=(const ClapTrap &clap)
 {
 	name = clap.name;
 	hit = clap.hit;
