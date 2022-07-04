@@ -20,7 +20,7 @@ ScavTrap::ScavTrap(): ClapTrap()
 	std::cout << name << " ScavTrap default constructor\n";
 }
 
-ScavTrap::ScavTrap(ScavTrap const &scav) : ClapTrap(scav.name)
+ScavTrap::ScavTrap(const ScavTrap &scav) : ClapTrap(scav.name)
 {
 	*this = scav;
 	std::cout << name << " ScavTrap copy constructor\n";
@@ -39,7 +39,7 @@ ScavTrap::~ScavTrap()
 	std::cout << name << " ScavTrap destructor\n";
 }
 
-ScavTrap& ScavTrap::operator = (ScavTrap const &scav)
+ScavTrap& ScavTrap::operator=(const ScavTrap &scav)
 {
 	name = scav.name;
 	hit = scav.hit;

@@ -39,7 +39,7 @@ FragTrap::~FragTrap()
 	std::cout << name << " FragTrap destructor\n";
 }
 
-FragTrap& FragTrap::operator = (const FragTrap &frag)
+FragTrap& FragTrap::operator=(const FragTrap &frag)
 {
 	name = frag.name;
 	hit = frag.hit;

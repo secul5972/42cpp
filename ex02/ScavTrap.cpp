@@ -39,7 +39,7 @@ ScavTrap::~ScavTrap()
 	std::cout << name << " ScavTrap destructor\n";
 }
 
-ScavTrap& ScavTrap::operator = (const ScavTrap &scav)
+ScavTrap& ScavTrap::operator=(const ScavTrap &scav)
 {
 	name = scav.name;
 	hit = scav.hit;
