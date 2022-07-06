@@ -14,17 +14,17 @@
 
 Cat::Cat()
 {
+	std::cout << "Cat default constructor called\n";
 	type = "Cat";
 	brain = new Brain();
-	std::cout << "Cat default constructor called\n";
 }
 
 Cat::Cat(const Cat &cat) : Animal()
 {
+	std::cout << "Cat copy constructor called\n";
 	type = cat.type;
 	brain = new Brain();
 	*brain = *(cat.brain);
-	std::cout << "Cat copy constructor called\n";
 }
 
 Cat &Cat::operator=(const Cat &cat)
@@ -36,8 +36,8 @@ Cat &Cat::operator=(const Cat &cat)
 
 Cat::~Cat()
 {
-	delete brain;
 	std::cout << "Cat destructor called\n";
+	delete brain;
 }
 
 void Cat::makeSound() const
