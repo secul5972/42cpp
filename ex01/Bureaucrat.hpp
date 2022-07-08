@@ -6,7 +6,7 @@
 /*   By: secul5972 <secul5972@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 21:18:00 by secul5972         #+#    #+#             */
-/*   Updated: 2022/07/08 10:37:35 by secul5972        ###   ########.fr       */
+/*   Updated: 2022/07/08 10:36:39 by secul5972        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <string>
 #include <iostream>
 #include <exception>
+#include "Form.hpp"
 
 class Form;
 
@@ -36,6 +37,7 @@ public:
 
 	void upGrade();
 	void downGrade();
+	void signForm(Form &form);
 
 	class GradeTooHighException : public std::exception
 	{

@@ -6,7 +6,7 @@
 /*   By: secul5972 <secul5972@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 21:17:55 by secul5972         #+#    #+#             */
-/*   Updated: 2022/07/08 10:37:31 by secul5972        ###   ########.fr       */
+/*   Updated: 2022/07/08 10:36:51 by secul5972        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,20 @@ void Bureaucrat::downGrade()
 	if (grade + 1 > 150)
 		throw GradeTooLowException();
 	grade++;
+}
+
+void Bureaucrat::signForm(Form &form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << name << " signed " << form.getName() << "\n";
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << name << " couldn't sign " << form.getName() << " because " << e.what() << "\n";
+	}
+	
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()
