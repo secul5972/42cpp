@@ -6,7 +6,7 @@
 /*   By: secul5972 <secul5972@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 09:11:17 by secul5972         #+#    #+#             */
-/*   Updated: 2022/07/09 19:19:16 by secul5972        ###   ########.fr       */
+/*   Updated: 2022/07/09 19:22:41 by secul5972        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,17 @@ const char *Form::GradeTooLowException::what() const throw()
 {
 	return "GradeTooLowException";
 }
+
+const char *Form::UnSignedException::what() const throw()
+{
+	return "UnSignedException";
+}
+
+const char *Form::EgradeTooLowException::what() const throw()
+{
+	return "EgradeTooLowException";
+}
+
 
 std::ostream &operator<<(std::ostream &o, const Form &form)
 {

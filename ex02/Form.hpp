@@ -6,7 +6,7 @@
 /*   By: secul5972 <secul5972@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 09:11:26 by secul5972         #+#    #+#             */
-/*   Updated: 2022/07/09 19:18:50 by secul5972        ###   ########.fr       */
+/*   Updated: 2022/07/09 21:07:48 by secul5972        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,15 @@ public:
 	explicit Form(std::string _name, int _sgrade, int _egrade);
 	Form(const Form &form);
 	Form &operator=(const Form &form);
-	~Form();
+	virtual ~Form();
 
 	void beSigned(const Bureaucrat &bureaucrat);
 	const std::string &getName() const;
 	const bool &getIsSigned() const;
 	const int &getSgrade() const;
 	const int &getEgrade() const;
+
+	virtual void execute(const Bureaucrat &executor) const = 0;
 
 	class GradeTooHighException : public std::exception
 	{
@@ -48,6 +50,18 @@ public:
 	};
 
 	class GradeTooLowException : public std::exception
+	{
+	public:
+		const char *what() const throw();
+	};
+
+	class UnSignedException : public std::exception
+	{
+	public:
+		const char *what() const throw();
+	};
+
+	class EgradeTooLowException : public std::exception
 	{
 	public:
 		const char *what() const throw();
