@@ -6,7 +6,7 @@
 /*   By: secul5972 <secul5972@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 09:11:17 by secul5972         #+#    #+#             */
-/*   Updated: 2022/07/09 19:22:41 by secul5972        ###   ########.fr       */
+/*   Updated: 2022/07/10 10:59:02 by secul5972        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,16 +84,10 @@ const char *Form::UnSignedException::what() const throw()
 	return "UnSignedException";
 }
 
-const char *Form::EgradeTooLowException::what() const throw()
-{
-	return "EgradeTooLowException";
-}
-
-
 std::ostream &operator<<(std::ostream &o, const Form &form)
 {
 	o << "name : " << form.getName() << "\nisSigned : " << form.getIsSigned()
-	<< "\ngrade : " << form.getSgrade() << "\ngradeRequired : " << form.getEgrade()
+	<< "\nsgrade : " << form.getSgrade() << "\negrade : " << form.getEgrade()
 	<< "\n";
 	return o;
 }

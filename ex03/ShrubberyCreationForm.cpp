@@ -6,7 +6,7 @@
 /*   By: secul5972 <secul5972@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 18:57:48 by secul5972         #+#    #+#             */
-/*   Updated: 2022/07/09 20:21:46 by secul5972        ###   ########.fr       */
+/*   Updated: 2022/07/10 10:55:17 by secul5972        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void ShrubberyCreationForm::execute(const Bureaucrat &bureaucrat) const
 	if (this->getIsSigned() == false)
 		throw Form::UnSignedException();
 	else if (this->getEgrade() < bureaucrat.getGrade())
-		throw Form::EgradeTooLowException();
+		throw Form::GradeTooLowException();
 	else
 	{
 		std::ofstream file((this->target + "_shruberry").c_str());

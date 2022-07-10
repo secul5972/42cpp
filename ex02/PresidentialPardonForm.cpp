@@ -6,7 +6,7 @@
 /*   By: secul5972 <secul5972@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 19:58:10 by secul5972         #+#    #+#             */
-/*   Updated: 2022/07/09 20:12:31 by secul5972        ###   ########.fr       */
+/*   Updated: 2022/07/10 10:53:19 by secul5972        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void PresidentialPardonForm::execute(Bureaucrat const &bureaucrat) const
 	if (this->getIsSigned() == false)
 		throw Form::UnSignedException();
 	else if (this->getEgrade() < bureaucrat.getGrade())
-		throw Form::EgradeTooLowException();
+		throw Form::GradeTooLowException();
 	else
 		std::cout << target << " has been pardoned by Zafod Beeblebrox!\n";
 

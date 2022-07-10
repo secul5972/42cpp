@@ -6,7 +6,7 @@
 /*   By: secul5972 <secul5972@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 09:11:26 by secul5972         #+#    #+#             */
-/*   Updated: 2022/07/09 21:07:48 by secul5972        ###   ########.fr       */
+/*   Updated: 2022/07/10 10:52:29 by secul5972        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,6 @@ public:
 	};
 
 	class UnSignedException : public std::exception
-	{
-	public:
-		const char *what() const throw();
-	};
-
-	class EgradeTooLowException : public std::exception
 	{
 	public:
 		const char *what() const throw();
