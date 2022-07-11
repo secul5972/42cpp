@@ -18,8 +18,13 @@
 template<class T>
 void iter(T* address, unsigned int length, void(*func)(const T& element))
 {
-	for (unsigned int i = 0; i < length; i++)
-		func(address[i]);
+	if (address)
+	{
+		for (unsigned int i = 0; i < length; i++)
+			func(address[i]);
+	}
+	else 
+		std::cout << "address error\n";
 }
 
 template<class T>

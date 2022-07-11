@@ -19,6 +19,5 @@ int main(void)
 	int bb[] = {1,2,3,4,0};
 	::iter(aa, 3, print);
 	::iter(bb, 5, print);
-	
 	return 0;
 }
