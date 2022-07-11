@@ -16,6 +16,14 @@ Conversion::Conversion(const char *input)
 {
 	value = atof(input);
 	std::string str(input);
+	if (str.length() == 1 && !('0' <= str[0] && str[0] <= '9'))
+	{
+		char_flag = true;
+		value = str[0];
+	}
+	else
+		char_flag = false;
+
 	if (((str.find("inf") != std::string::npos) && (str[str.length() - 1] == 'f') && (str[str.length() - 2] == 'f'))
 	|| ((str.find("inf") == std::string::npos) && (str[str.length() - 1] == 'f')))
 		float_flag = true;
@@ -43,9 +51,9 @@ void Conversion::findActualTypeAndConvert()
 {
 	if (float_flag)
 		ifFloatIsActual();
-	else if (CHAR_MIN <= value && value <= CHAR_MAX && prec_flag == 0)
+	else if ((0 <= value && value <= std::numeric_limits<char>::max() && prec_flag == false) || char_flag)
 		ifCharIsActual();
-	else if (INT_MIN <= value && value <= INT_MAX && prec_flag == 0)
+	else if (std::numeric_limits<int>::min() <= value && value <= std::numeric_limits<int>::max() && prec_flag == false)
 		ifIntIsActual();
 	else
 		ifDoubleIsActual();
@@ -98,13 +106,11 @@ void Conversion::ifFloatIsActual()
 	else 
 		std::cout << "char: impossible\n";
 
-	if (INT_MIN <= val && val <= INT_MAX)
+	if (std::numeric_limits<int>::min() <= val && val <= std::numeric_limits<int>::max())
 		std::cout << "int: " << static_cast<int>(val) << "\n";
 	else 
 		std::cout << "int: impossible\n";
 
-	std::cout << std::fixed;
-	std::cout.precision(6);
 	if (val - (int)val == 0)
 	{
 		std::cout << "float: " << static_cast<float>(val) << ".0f\n";
@@ -127,13 +133,11 @@ void Conversion::ifDoubleIsActual()
 	else 
 		std::cout << "char: impossible\n";
 		
-	if (INT_MIN <= val && val <= INT_MAX)
+	if (std::numeric_limits<int>::min() <= val && val <= std::numeric_limits<int>::max())
 		std::cout << "int: " << static_cast<int>(val) << "\n";
 	else 
 		std::cout << "int: impossible\n";
 
-	std::cout << std::fixed;
-	std::cout.precision(6);
 	if (val - (int)val == 0)
 	{
 		std::cout << "float: " << static_cast<float>(val) << ".0f\n";

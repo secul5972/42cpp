@@ -14,7 +14,7 @@
 #define CONVERSION_HPP
 
 #include <iostream>
-#include <climits>
+#include <limits>
 #include <cstdlib>
 
 class Conversion
@@ -23,6 +23,7 @@ private:
 	double value;
 	bool float_flag;
 	bool prec_flag;
+	bool char_flag;
 	Conversion();
 public:
 	Conversion(const char *input);
