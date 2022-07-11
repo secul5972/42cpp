@@ -43,7 +43,9 @@ Form::~Form()
 
 void Form::beSigned(const Bureaucrat &bureaucrat)
 {
-	if (sgrade >= bureaucrat.getGrade())
+	if (issigned == true)
+		throw Form::AlreadySignedException();
+	else if (sgrade >= bureaucrat.getGrade())
 		issigned = true;
 	else 
 		throw Form::GradeTooLowException();
@@ -79,9 +81,19 @@ const char *Form::GradeTooLowException::what() const throw()
 	return "GradeTooLowException";
 }
 
+const char *Form::AlreadySignedException::what() const throw()
+{
+	return "AlreadySignedException";
+}
+
 const char *Form::UnSignedException::what() const throw()
 {
 	return "UnSignedException";
+}
+
+const char *Form::FileIsNotOpenException::what() const throw()
+{
+	return "FileIsNotOpenException";
 }
 
 std::ostream &operator<<(std::ostream &o, const Form &form)

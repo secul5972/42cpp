@@ -72,4 +72,23 @@ int main()
 	}
 
 	std::cout << "------------------------------------------------------\n";
+
+	try
+	{
+		Bureaucrat aa("aa", 2);
+		Bureaucrat cc("cc", 3);
+		Form bb("bb", 5, 13);
+		std::cout << aa << '\n';
+		std::cout << bb << '\n';
+		std::cout << cc << '\n';
+		aa.signForm(bb);
+		cc.signForm(bb);
+		std::cout << bb << '\n';
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+
+	std::cout << "------------------------------------------------------\n";
 }

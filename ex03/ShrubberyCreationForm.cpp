@@ -42,8 +42,15 @@ void ShrubberyCreationForm::execute(const Bureaucrat &bureaucrat) const
 	else
 	{
 		std::ofstream file((this->target + "_shruberry").c_str());
-		file << "  *  \n *** \n*****\n  *  \n  *  \n *** \n";
-		std::cout << target << " " << this->getName() << " is executed\n";
-		file.close();
+		if (file.is_open())
+		{
+			file << "  *  \n *** \n*****\n  *  \n  *  \n *** \n";
+			std::cout << target << " " << this->getName() << " is executed\n";
+			file.close();
+		}
+		else
+		{
+			throw Form::FileIsNotOpenException();
+		}
 	}
 }

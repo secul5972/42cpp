@@ -33,7 +33,7 @@ int main()
 		if (bb)
 		{
 			std::cout << "------------------------------------------------------\n";
-			bb->beSigned(bure);
+			bure.signForm(*bb);
 			bure.executeForm(*bb);
 			delete bb;
 			std::cout << "------------------------------------------------------\n";
@@ -41,7 +41,7 @@ int main()
 		if (cc)
 		{
 			std::cout << "------------------------------------------------------\n";
-			cc->beSigned(bure);
+			bure.signForm(*cc);
 			bure.executeForm(*cc);
 			delete cc;
 			std::cout << "------------------------------------------------------\n";
@@ -49,7 +49,7 @@ int main()
 		if (dd)
 		{
 			std::cout << "------------------------------------------------------\n";
-			dd->beSigned(bure);
+			bure.signForm(*dd);
 			bure.executeForm(*dd);
 			delete dd;
 			std::cout << "------------------------------------------------------\n";
@@ -57,13 +57,13 @@ int main()
 		if (ee)
 		{
 			std::cout << "------------------------------------------------------\n";
-			ee->beSigned(bure);
+			bure.signForm(*ee);
 			bure.executeForm(*ee);
 			delete bb;
 			std::cout << "------------------------------------------------------\n";
 		}
 	}
-	catch (std::exception &e)
+	catch (const std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
 	}

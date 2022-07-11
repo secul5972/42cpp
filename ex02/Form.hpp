@@ -54,8 +54,20 @@ public:
 	public:
 		const char *what() const throw();
 	};
+	
+	class AlreadySignedException : public std::exception
+	{
+	public:
+		const char *what() const throw();
+	};
 
 	class UnSignedException : public std::exception
+	{
+	public:
+		const char *what() const throw();
+	};
+
+	class FileIsNotOpenException : public std::exception
 	{
 	public:
 		const char *what() const throw();

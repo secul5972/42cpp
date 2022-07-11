@@ -60,6 +60,12 @@ public:
 	public:
 		const char *what() const throw();
 	};
+
+	class FileIsNotOpenException : public std::exception
+	{
+	public:
+		const char *what() const throw();
+	};
 };
 std::ostream &operator<<(std::ostream &o, const Form &form);
 #endif

@@ -33,17 +33,24 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 	return *this;
 }
 
-void ShrubberyCreationForm::execute(const Bureaucrat &bureaucrat) const
+void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
 {
 	if (this->getIsSigned() == false)
 		throw Form::UnSignedException();
-	else if (this->getEgrade() < bureaucrat.getGrade())
+	else if (this->getEgrade() < executor.getGrade())
 		throw Form::GradeTooLowException();
 	else
 	{
 		std::ofstream file((this->target + "_shruberry").c_str());
-		file << "  *  \n *** \n*****\n  *  \n  *  \n *** \n";
-		std::cout << target << " " << this->getName() << " is executed\n";
-		file.close();
+		if (file.is_open())
+		{
+			file << "  *  \n *** \n*****\n  *  \n  *  \n *** \n";
+			std::cout << target << " " << this->getName() << " is executed\n";
+			file.close();
+		}
+		else
+		{
+			throw Form::FileIsNotOpenException();
+		}
 	}
 }

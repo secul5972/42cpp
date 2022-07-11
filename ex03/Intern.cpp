@@ -19,7 +19,7 @@ Intern::Intern()
 
 Intern::Intern(const Intern &intern)
 {
-	std::cout << "Intern default constructor called" << "\n";
+	std::cout << "Intern copy constructor called" << "\n";
 	*this = intern;
 }
 
@@ -30,7 +30,7 @@ Intern::~Intern()
 
 Intern &Intern::operator=(const Intern &intern)
 {
-	*this = intern;
+	(void)intern;
 	return *this;
 }
 

@@ -18,70 +18,96 @@
 
 int main()
 {
-	ShrubberyCreationForm aa("aa");
-	RobotomyRequestForm bb("bb");
-	PresidentialPardonForm cc("cc");
+
 	Bureaucrat bure("Bure", 50);
 	Bureaucrat aucrat("aucrat", 3);
-	
-	std::cout << aa << "\n";
-	std::cout << bb << "\n";
-	std::cout << cc << "\n";
 	std::cout << bure << "\n";
+	std::cout << aucrat << "\n";
 	
-	std::cout << "------------------------------------------------------\n";
+	std::cout << "------------------------------------------------------\n\n";
 
 	try
 	{
+		ShrubberyCreationForm aa("aa");
+		RobotomyRequestForm bb("bb");
+		PresidentialPardonForm cc("cc");
+
+		std::cout << "[-----------------------------------------------------]\n";
+
+		std::cout << aa << "\n";
+		std::cout << bb << "\n";
+		std::cout << cc << "\n";
+
 		bure.executeForm(aa);
 		bure.executeForm(bb);
 		bure.executeForm(cc);
+
+		std::cout << "[-----------------------------------------------------]\n";
 	}
-	catch (std::exception &e)
+	catch (const std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
 
-	std::cout << "------------------------------------------------------\n";
+	std::cout << "\n------------------------------------------------------\n\n";
 
 	try
 	{
-		aa.beSigned(bure);
+		ShrubberyCreationForm aa("aa");
+		
+		std::cout << "[-----------------------------------------------------]\n";
+
+		bure.signForm(aa);
 		bure.executeForm(aa);
+		
+		std::cout << "[-----------------------------------------------------]\n";
 	}
-	catch (std::exception &e)
+	catch (const std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
 
-	std::cout << "------------------------------------------------------\n";
+	std::cout << "\n------------------------------------------------------\n\n";
 
 
 	try
 	{
-		bb.beSigned(bure);
+		RobotomyRequestForm bb("bb");
+
+		std::cout << "[-----------------------------------------------------]\n";
+
+		bure.signForm(bb);
 		bure.executeForm(bb);
+		
+		std::cout << "[-----------------------------------------------------]\n";
 	}
-	catch (std::exception &e)
+	catch (const std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
 
-	std::cout << "------------------------------------------------------\n";
+	std::cout << "\n------------------------------------------------------\n\n";
 	
 	try
 	{
-		aa.beSigned(aucrat);
-		bb.beSigned(aucrat);
-		cc.beSigned(aucrat);
+		ShrubberyCreationForm aa("aa");
+		RobotomyRequestForm bb("bb");
+		PresidentialPardonForm cc("cc");
+
+		std::cout << "[-----------------------------------------------------]\n";
+
+		aucrat.signForm(aa);
+		aucrat.signForm(bb);
+		aucrat.signForm(cc);
 		aucrat.executeForm(aa);
 		aucrat.executeForm(bb);
 		aucrat.executeForm(cc);
+
+		std::cout << "[-----------------------------------------------------]\n";
 	}
-	catch (std::exception &e)
+	catch (const std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
 
-	std::cout << "------------------------------------------------------\n";
 }

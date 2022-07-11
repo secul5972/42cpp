@@ -30,7 +30,7 @@ public:
 	~Intern();
 	Intern &operator=(const Intern &intern);
 
-	Form *makeForm(const std::string &formName, const std::string &targetName);
+	Form *makeForm(const std::string &formname, const std::string &target);
 };
 
 #endif

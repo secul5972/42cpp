@@ -80,7 +80,7 @@ int main()
 		std::cout << bb << '\n';
 		for (int i = 0; i < 4; i++)
 		{
-			aa.upGrade();
+			bb.upGrade();
 			std::cout << bb << '\n';
 		}
 	}

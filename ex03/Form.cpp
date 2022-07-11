@@ -84,6 +84,11 @@ const char *Form::UnSignedException::what() const throw()
 	return "UnSignedException";
 }
 
+const char *Form::FileIsNotOpenException::what() const throw()
+{
+	return "FileIsNotOpenException";
+}
+
 std::ostream &operator<<(std::ostream &o, const Form &form)
 {
 	o << "name : " << form.getName() << "\nisSigned : " << form.getIsSigned()

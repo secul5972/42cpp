@@ -33,11 +33,11 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &r
 	return *this;
 }
 
-void RobotomyRequestForm::execute(Bureaucrat const &bureaucrat) const
+void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
 	if (this->getIsSigned() == false)
 		throw Form::UnSignedException();
-	else if (this->getEgrade() < bureaucrat.getGrade())
+	else if (this->getEgrade() < executor.getGrade())
 		throw Form::GradeTooLowException();
 	else
 	{
