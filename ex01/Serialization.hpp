@@ -14,7 +14,6 @@
 #define SERIALIZATION_HPP
 
 #include <string>
-#include <stdint.h>
 
 typedef struct _Data
 {
