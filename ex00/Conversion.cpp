@@ -36,14 +36,20 @@ Conversion::Conversion(const char *input)
 		prec_flag = false;
 }
 
-Conversion::Conversion(const Conversion &conversion)
+Conversion::Conversion(const Conversion &conversion) 
 {
-	*this = conversion;
+	value = conversion.value;
+	float_flag = conversion.float_flag;
+	prec_flag = conversion.prec_flag;
+	char_flag = conversion.char_flag;
 }
 
 Conversion &Conversion::operator=(const Conversion &conversion)
 {
 	value = conversion.value;
+	float_flag = conversion.float_flag;
+	prec_flag = conversion.prec_flag;
+	char_flag = conversion.char_flag;
 	return *this;
 }
 
