@@ -6,7 +6,7 @@
 /*   By: secul5972 <secul5972@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 10:55:02 by secul5972         #+#    #+#             */
-/*   Updated: 2022/07/12 11:38:39 by secul5972        ###   ########.fr       */
+/*   Updated: 2022/07/12 16:14:22 by secul5972        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Span &Span::operator=(const Span &span)
 void Span::addNumber(int num)
 {
 	if (vec.size() >= maxsize)
-		throw SpanIsFullException();
+		throw NeedMoreSpaceException();
 	else
 		vec.push_back(num);
 }
@@ -41,12 +41,11 @@ int Span::shortestSpan() const
 	std::vector<int> cp(vec);
 	sort(cp.begin(), cp.end());
 
-	std::vector<int> diff;
+	int ret = std::numeric_limits<int>::max();
 	for (unsigned int i = 0; i < cp.size() - 1; i++)
-		diff.push_back(cp[i + 1] - cp[i]);
-	sort(diff.begin(), diff.end());
+		ret = std::min(ret, cp[i + 1] - cp[i]);
 
-	return diff[0];
+	return ret;
 }
 
 int Span::longestSpan() const
@@ -56,19 +55,19 @@ int Span::longestSpan() const
 	return *std::max_element(vec.begin(), vec.end()) - *std::min_element(vec.begin(), vec.end());
 }
 
-void Span::addRange(std::vector<int>::iterator begin, std::vector<int>::iterator end)
+void Span::addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end)
 {
 	std::vector<int> tmp(begin, end);
 
 	if (vec.size() + tmp.size() > maxsize)
-		throw SpanIsFullException();
+		throw NeedMoreSpaceException();
 	for (unsigned int i = 0; i < tmp.size(); i++)
 		vec.push_back(tmp[i]);
 }
 
-const char *Span::SpanIsFullException::what() const throw()
+const char *Span::NeedMoreSpaceException::what() const throw()
 {
-	return "SpanIsFullException";
+	return "NeedMoreSpaceException";
 }
 
 const char *Span::FewNumberException::what() const throw()

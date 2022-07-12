@@ -6,7 +6,7 @@
 /*   By: secul5972 <secul5972@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 10:55:00 by secul5972         #+#    #+#             */
-/*   Updated: 2022/07/12 11:35:28 by secul5972        ###   ########.fr       */
+/*   Updated: 2022/07/12 16:14:38 by secul5972        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <vector>
 #include <algorithm>
 #include <iostream>
+#include <limits>
 
 class Span
 {
@@ -34,9 +35,9 @@ public:
 	int shortestSpan() const;
 	int longestSpan() const;
 
-	void addRange(std::vector<int>::iterator begin, std::vector<int>::iterator end);
+	void addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end);
 
-	class SpanIsFullException : public std::exception
+	class NeedMoreSpaceException : public std::exception
 	{
 	public:
 		const char *what() const throw();
@@ -48,6 +49,7 @@ public:
 		const char *what() const throw();
 	};
 
+	
 };
 
 #endif
