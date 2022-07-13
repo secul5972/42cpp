@@ -87,7 +87,7 @@ int main()
 
 	try
 	{
-		Span ex3 = Span(3);
+		Span ex3(3);
 
 		std::cout << ex3.longestSpan() << std::endl;
 	}
@@ -113,6 +113,46 @@ int main()
 		std::cerr << e.what() << '\n';
 	}
 
+	std::cout << "-------------------------------------------\n";
 
+	try
+	{
+		Span sp3 = Span(10000);
+
+		std::vector<int> tmp;
+		for (int i = 0; i < 10000; i++)
+			tmp.push_back(i * 3 + 1);
+
+		sp3.addNumber(tmp.begin(), tmp.end());
+		Span sp4(sp3);
+		std::cout << sp4.shortestSpan() << '\n';
+		std::cout << sp4.longestSpan() << '\n';
+	}
+	catch (const std::exception &e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+
+	std::cout << "-------------------------------------------\n";
+
+	try
+	{
+		Span sp5 = Span(10001);
+
+		sp5.addNumber(0);
+
+		std::vector<int> tmp;
+		for (int i = 0; i < 10000; i++)
+			tmp.push_back(i * 3 + 1);
+
+		sp5.addNumber(tmp.begin(), tmp.end());
+
+		std::cout << sp5.shortestSpan() << '\n';
+		std::cout << sp5.longestSpan() << '\n';
+	}
+	catch (const std::exception &e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 	return 0;
 }

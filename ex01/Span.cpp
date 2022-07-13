@@ -14,7 +14,7 @@
 
 Span::Span(unsigned int _maxsize) : maxsize(_maxsize) {}
 
-Span::Span(const Span &span) : maxsize(span.maxsize) {}
+Span::Span(const Span &span) : maxsize(span.maxsize), vec(span.vec) {}
 
 Span::~Span() {}
 

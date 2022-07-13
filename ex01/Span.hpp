@@ -13,11 +13,8 @@
 #ifndef SPAN_HPP
 #define SPAN_HPP
 
-#include <exception>
 #include <vector>
 #include <algorithm>
-#include <iostream>
-#include <limits>
 
 class Span
 {
@@ -48,8 +45,6 @@ public:
 	public:
 		const char *what() const throw();
 	};
-
-	
 };
 
 #endif
