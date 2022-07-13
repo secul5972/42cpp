@@ -29,68 +29,68 @@ int main()
 		cc.push_back(i * 3 + 1);
 	}
 
-	if (easyfind(aa, 4))
+	if (easyfind(aa, 4) != aa.end())
 		std::cout << "aa can find\n";
 	else
 		std::cout << "aa can't find\n";
 	
-	if (easyfind(bb, 4))
+	if (easyfind(bb, 4) != bb.end())
 		std::cout << "bb can find\n";
 	else
 		std::cout << "bb can't find\n";
 
-	if (easyfind(cc, 4))
+	if (easyfind(cc, 4) != cc.end())
 		std::cout << "cc can find\n";
 	else
 		std::cout << "cc can't find\n";
 
 	std::cout << "\n--------------------------------------------\n\n";
 	
-	if (easyfind(aa, 17))
+	if (easyfind(aa, 17) != aa.end())
 		std::cout << "aa can find\n";
 	else
 		std::cout << "aa can't find\n";
 	
-	if (easyfind(bb, 17))
+	if (easyfind(bb, 17) != bb.end())
 		std::cout << "bb can find\n";
 	else
 		std::cout << "bb can't find\n";
 
-	if (easyfind(cc, 17))
+	if (easyfind(cc, 17) != cc.end())
 		std::cout << "cc can find\n";
 	else
 		std::cout << "cc can't find\n";
 
 	std::cout << "\n--------------------------------------------\n\n";
 
-	if (easyfind(aa, 103))
+	if (easyfind(aa, 103) != aa.end())
 		std::cout << "aa can find\n";
 	else
 		std::cout << "aa can't find\n";
 	
-	if (easyfind(bb, 103))
+	if (easyfind(bb, 103) != bb.end())
 		std::cout << "bb can find\n";
 	else
 		std::cout << "bb can't find\n";
 
-	if (easyfind(cc, 103))
+	if (easyfind(cc, 103) != cc.end())
 		std::cout << "cc can find\n";
 	else
 		std::cout << "cc can't find\n";
 
 	std::cout << "\n--------------------------------------------\n\n";
 
-	if (easyfind(aa, -4))
+	if (easyfind(aa, -4) != aa.end())
 		std::cout << "aa can find\n";
 	else
 		std::cout << "aa can't find\n";
 	
-	if (easyfind(bb, -4))
+	if (easyfind(bb, -4) != bb.end())
 		std::cout << "bb can find\n";
 	else
 		std::cout << "bb can't find\n";
 
-	if (easyfind(cc, -4))
+	if (easyfind(cc, -4) != cc.end())
 		std::cout << "cc can find\n";
 	else
 		std::cout << "cc can't find\n";

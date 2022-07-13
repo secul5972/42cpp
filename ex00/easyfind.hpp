@@ -15,14 +15,14 @@
 
 #include <algorithm>
 
-template<class T>
-bool easyfind(const T &container, const int num)
+template<typename T>
+typename T::iterator easyfind(T &container, const int num)
 {
-	class T::iterator iter;
+	typename T::iterator it = std::find(container.begin(), container.end(), num);
 
-	if (std::find(container.begin(), container.end(), num) != container.end())
-		return true;
-	return false;
+	if (it != container.end())
+		return it;
+	return container.end();
 }
 
 #endif
